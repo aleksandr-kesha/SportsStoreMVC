@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SportsStore.WebUI;
+using Moq;
+using SportsStore.Domain.Repository;
 using SportsStore.WebUI.Controllers;
 
-namespace SportsStore.UnitTests.Controllers
+namespace SportsStore.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
@@ -15,8 +12,10 @@ namespace SportsStore.UnitTests.Controllers
         [TestMethod]
         public void Index()
         {
+            var mock = new Mock<IProductRepository>();
+
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = new HomeController(mock.Object);
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -24,4 +23,5 @@ namespace SportsStore.UnitTests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+    }
 }
