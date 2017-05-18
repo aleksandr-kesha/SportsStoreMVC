@@ -1,0 +1,39 @@
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.filters
+*.bin
+
+# Merge files
+*.bak
+*.orig
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
