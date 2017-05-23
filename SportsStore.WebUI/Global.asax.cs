@@ -1,6 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Data.Entity;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using SportsStore.Domain.Models;
 using SportsStore.WebUI.Infrastructure;
 
 namespace SportsStore.WebUI
@@ -9,6 +11,8 @@ namespace SportsStore.WebUI
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new DataContextInitializer());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

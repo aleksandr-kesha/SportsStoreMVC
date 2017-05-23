@@ -1,0 +1,101 @@
+﻿DIV#categories A {
+    font: bold 1.1em "Arial Narrow", "Franklin Gothic Medium", Arial;
+    display: block;
+    text-decoration: none;
+    padding: .6em;
+    color: black;
+    border-bottom: 1px solid silver;
+}
+
+    DIV#categories A.selected {
+        background-color: #666;
+        color: white;
+    }
+
+    DIV#categories A:hover {
+        background-color: #ccc;
+    }
+
+    DIV#categories A.selected:hover {
+        background-color: #666;
+    }
+
+DIV.item Button {
+    color: White;
+    background-color: #333;
+    border: 1px solid black;
+    float: right;
+}
+
+H2 {
+    margin-top: 0.3em;
+}
+
+#cartTable TFOOT TD {
+    border-top: 1px dotted gray;
+    font-weight: bold;
+}
+
+#cartTable thead th {
+    text-align: right;
+}
+
+    #cartTable thead th:first-child {
+        text-align: center;
+    }
+
+    #cartTable thead th:nth-child(2) {
+        text-align: left;
+    }
+
+#cartTable tbody td {
+    text-align: right;
+}
+
+    #cartTable tbody td:first-child {
+        text-align: center;
+    }
+
+    #cartTable tbody td:nth-child(2) {
+        text-align: left;
+    }
+
+#cartTable tfoot tr td {
+    text-align: right;
+}
+
+p.actionButtons {
+    text-align: center;
+}
+
+.actionButtons A, button.actionButtons {
+    font: .8em Arial;
+    color: White;
+    margin: .5em;
+    text-decoration: none;
+    padding: .15em 1.5em .2em 1.5em;
+    background-color: #353535;
+    border: 1px solid black;
+}
+
+DIV#cartSummary {
+    float: right;
+    margin: .8em;
+    color: Silver;
+    background-color: #555;
+    padding: .5em .5em .5em 1em;
+}
+
+DIV#cartSummary A {
+        text-decoration: none;
+        padding: .4em 1em .4em 1em;
+        line-height: 2.1em;
+        margin-left: .5em;
+        background-color: #333;
+        color: White;
+        border: 1px solid black;
+    }
+
+.checkout label { display: inline-block;width: 50px;text-align: right; }
+.checkout div input { width: 200px;margin: 2px;}
+#errors { color: red;}
