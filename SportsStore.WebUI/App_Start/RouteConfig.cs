@@ -15,21 +15,45 @@ namespace SportsStore.WebUI
 
             routes.MapRoute(
                 name: null,
-                url: "page/{page}",
-                defaults: new { controller = "Products", action = "List", id = UrlParameter.Optional }
+                url: "{category}",
+                defaults: new {controller = "Products", action = "List", page = 1}
                 );
 
             routes.MapRoute(
-                 name: null,
-                 url: "{controller}/{action}/page/{page}",
-                 defaults: new { controller = "Products", action = "List", id = UrlParameter.Optional }
-             );
+                name: null,
+                url: "page/{page}",
+                defaults: new {controller = "Products", action = "List", category = (string) null}
+                );
+
+            routes.MapRoute(
+                name: null,
+                url: "{category}/page/{page}",
+                defaults: new {controller = "Products", action = "List"}
+                );
+
+            routes.MapRoute(
+                name: null,
+                url: "{controller}/{action}/{category}",
+                defaults: new {controller = "Products", action = "List", page = 1}
+                );
+
+            routes.MapRoute(
+                name: null,
+                url: "{controller}/{action}/{category}/page/{page}",
+                defaults: new {controller = "Products", action = "List"}
+                );
+
+            routes.MapRoute(
+                name: null,
+                url: "{controller}/{action}",
+                defaults: new {controller = "Products", action = "List"}
+                );
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Products", action = "List", id = UrlParameter.Optional }
-            );
+                url: "",
+                defaults: new {controller = "Products", action = "List", category = (string) null, page = 1}
+                );
         }
     }
 }
