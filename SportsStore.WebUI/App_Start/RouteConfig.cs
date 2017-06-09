@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace SportsStore.WebUI
@@ -13,47 +9,19 @@ namespace SportsStore.WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: null,
-                url: "{category}",
-                defaults: new {controller = "Products", action = "List", page = 1}
-                );
+            routes.MapRoute(null, "", new {controller = "Products", action = "List", category = (string) null, page = 1});
 
-            routes.MapRoute(
-                name: null,
-                url: "page/{page}",
-                defaults: new {controller = "Products", action = "List", category = (string) null}
-                );
+            routes.MapRoute(null, "page/{page}", new {controller = "Products", action = "List", category = (string) null}, new {page = @"\d+"});
 
-            routes.MapRoute(
-                name: null,
-                url: "{category}/page/{page}",
-                defaults: new {controller = "Products", action = "List"}
-                );
+            routes.MapRoute(null, "{category}", new {controller = "Products", action = "List", page = 1} );
 
-            routes.MapRoute(
-                name: null,
-                url: "{controller}/{action}/{category}",
-                defaults: new {controller = "Products", action = "List", page = 1}
-                );
+            routes.MapRoute(null, "{category}/page/{page}", new {controller = "Products", action = "List"}, new {page = @"\d+"});
 
-            routes.MapRoute(
-                name: null,
-                url: "{controller}/{action}/{category}/page/{page}",
-                defaults: new {controller = "Products", action = "List"}
-                );
+            routes.MapRoute(null, "{controller}/{action}/{category}", new {controller = "Products", action = "List", page = 1});
 
-            routes.MapRoute(
-                name: null,
-                url: "{controller}/{action}",
-                defaults: new {controller = "Products", action = "List"}
-                );
+            routes.MapRoute(null, "{controller}/{action}/{category}/page/{page}",new {controller = "Products", action = "List"}, new { page = @"\d+" });
 
-            routes.MapRoute(
-                name: "Default",
-                url: "",
-                defaults: new {controller = "Products", action = "List", category = (string) null, page = 1}
-                );
+            routes.MapRoute(null, "{controller}/{action}");
         }
     }
 }

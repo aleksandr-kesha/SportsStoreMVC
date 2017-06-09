@@ -1,6 +1,7 @@
 ﻿@model SportsStore.WebUI.Models.ProductListViewModel
 
 @using SportsStore.WebUI.HtmlHelpers
+@using SportsStore.WebUI.Models
 
 @{
     ViewBag.Title = "Products";
@@ -12,5 +13,5 @@
 }
 
 <div class="pager">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", "Products", new {page = x}))
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", "Products", new { page = x, category = Model.CurrentCategory }))
 </div>
